@@ -13,7 +13,7 @@ class Blog(models.Model):
     def summary(self):
         zwrotka = ""
         if len(self.text)>100:
-            zwrotka = self.text[:100]+'... [czytaj dalej]'
+            zwrotka = self.text[:100]+'...'
         else:
             zwrotka = self.text
         return zwrotka

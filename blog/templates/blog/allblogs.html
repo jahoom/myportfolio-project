@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="pl">
+{% load staticfiles %}
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -44,15 +45,15 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Jan Macioszczyk</a>
+      <a class="navbar-brand" href="{% url 'home'%}">Jan Macioszczyk</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link" href="#">Strona główna </a>
-          <a class="nav-item nav-link" href="#">Portfolio</a>
-          <a class="nav-item nav-link active" href="#">Blog</a>
+          <a class="nav-item nav-link" href="{% url 'home'%}">Strona główna </a>
+          <a class="nav-item nav-link" href="{% static 'Macioszczyk_resume.pdf' %}">CV</a>
+          <a class="nav-item nav-link active" href="{%url 'allblogs'%}">Blog</a>
           <a class="nav-item nav-link" href="#">Kontakt</a>
         </div>
       </div>
@@ -74,9 +75,9 @@
 
 
         <div class="card-body">
-          <h4>{{ blog.title }}</h4>
+          <a href="{%url 'detail' blog.id%}"> <h4>{{ blog.title }}</h4></a>
         <p class="text-muted">{{blog.date_text}}</p>
-        <p>{{blog.summary}}</p>
+        <p>{{blog.summary}}</p><a href="{%url 'detail' blog.id%}"><p>[czytaj dalej]</p> <a>
         <img class="card-img-top" src="{{blog.image.url}}"</img>
       </div>
 
