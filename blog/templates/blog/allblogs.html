@@ -54,7 +54,7 @@
           <a class="nav-item nav-link" href="{% url 'home'%}">Strona główna </a>
           <a class="nav-item nav-link" href="{% static 'Macioszczyk_resume.pdf' %}">CV</a>
           <a class="nav-item nav-link active" href="{%url 'allblogs'%}">Blog</a>
-          <a class="nav-item nav-link" href="#">Kontakt</a>
+          <a class="nav-item nav-link" href="mailto:jan.macioszczyk@gmail.com">Kontakt</a>
         </div>
       </div>
     </nav>
@@ -68,7 +68,7 @@
   <br />
   <h2 class="pt-1">Ostatni post</h2>
   <hr />
-
+  <p>Tutaj wkrótce pojawią się pierwsze wpisy.</p>
   {%for blog in allblogs.all %}
 
   <div class="row">
